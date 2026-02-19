@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarkdownPro - Advanced Editor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="splash" class="splash">
+        <div class="splash-content">
+            <h1>✨ MarkdownPro</h1>
+            <p>Professional Markdown Editor</p>
+            <div class="splash-features">
+                <span>🚀 Real-time Preview</span>
+                <span>💾 Auto-save</span>
+                <span>🎨 Themes</span>
+                <span>⌨️ Shortcuts</span>
+            </div>
+            <button onclick="closeSplash()" class="splash-btn">Get Started</button>
+        </div>
+    </div>
+
+    <div id="app" class="app">
+        <header class="header">
+            <div class="header-left">
+                <h1 class="logo">📝 MarkdownPro</h1>
+                <div class="stats">
+                    <span id="wordCount">0 words</span>
+                    <span id="charCount">0 chars</span>
+                    <span id="lineCount">0 lines</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <button onclick="toggleTheme()" class="icon-btn" title="Toggle Theme">🌓</button>
+                <button onclick="toggleView()" class="icon-btn" title="Toggle View">👁️</button>
+                <button onclick="toggleFullscreen()" class="icon-btn" title="Fullscreen">⛶</button>
+                <button onclick="newDocument()" class="icon-btn" title="New">📄</button>
+                <button onclick="downloadMd()" class="icon-btn" title="Download .md">⬇️</button>
+                <button onclick="clearEditor()" class="icon-btn danger" title="Clear">🗑️</button>
+            </div>
+        </header>
+
+        <div class="toolbar">
+            <button onclick="insertFormat('bold')" title="Bold (Ctrl+B)">𝐁</button>
+            <button onclick="insertFormat('italic')" title="Italic (Ctrl+I)">𝐼</button>
+            <button onclick="insertFormat('heading')" title="Heading (Ctrl+H)">H</button>
+            <button onclick="insertFormat('list')" title="List (Ctrl+L)">☰</button>
+            <button onclick="insertFormat('link')" title="Link (Ctrl+K)">🔗</button>
+            <button onclick="insertFormat('image')" title="Image (Ctrl+G)">🖼️</button>
+            <button onclick="insertFormat('code')" title="Code (Ctrl+`)">&lt;/&gt;</button>
+            <button onclick="insertFormat('quote')" title="Quote (Ctrl+Q)">❝</button>
+            <button onclick="insertFormat('table')" title="Table (Ctrl+T)">⊞</button>
+            <button onclick="insertFormat('hr')" title="Horizontal Rule">―</button>
+        </div>
+
+        <div id="container" class="container">
+            <div id="editorPane" class="editor-pane">
+                <div class="line-numbers" id="lineNumbers"></div>
+                <textarea id="editor" class="editor" placeholder="# Start writing your markdown here...
+
+## Features
+- **Bold** and *italic* text
+- [Links](https://example.com)
+- ![Images](url)
+- `Code blocks`
+- > Blockquotes
+- Tables and more!
+
+Try the toolbar buttons or keyboard shortcuts!"></textarea>
+            </div>
+            <div id="previewPane" class="preview-pane">
+                <div id="preview" class="preview"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
